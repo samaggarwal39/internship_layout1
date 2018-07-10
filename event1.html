@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Image Gallery</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:regular&subset=Latin,Cyrillic">
+  <style type="text/css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+<script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+<style>
+  	.a1{
+  		color: #997511;
+  	}
+  	body{
+  		font-family: Ubuntu, sans-serif;
+  	}
+  	.navbar{
+      position: relative;
+    min-height: 50px;
+    margin-bottom: -7px;
+    border: 8px solid transparent;
+    border-radius: 0px;
+    }
+    .navbar-nav {
+  
+    margin: -10px;
+}
+.menu{
+        margin-top: 6%;
+      }
+      .z1 p {
+    margin-bottom: 15px;
+    font-size: 16px;
+    font-weight: 200;
+}
+.z1{
+  background: rgba(28,28,28,0.8);
+  border-radius: 0px;
+}
+.r1
+{
+  
+    text-align: left;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-family: "Adobe Garamond";
+    color: #fff;
+    background-color: black;
+    margin-top: -14px;
+    padding: 10px;
+}
+
+.imageAndText:hover{
+
+opacity: 0.8;
+transition: all 0.5s ease-out;
+}
+.img-responsive:hover{
+	opacity: 0.8;
+transition: all 0.5s ease-out;
+}
+  #mask {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom:0;
+  right:0;
+  margin:auto;
+  visibility:hidden;
+  z-index: -2;
+  background: #000;
+  background:rgba(0,0,0,0.8);
+  overflow:hidden;
+  opacity:0;
+  transition: all .5s ease-in-out;
+}
+#mask.showing{
+  opacity:1;
+  z-index: 9000;
+  visibility:visible;
+  overflow:auto;
+  transition: all .5s ease-in-out;
+}
+#boxes {
+  display:table;
+  width:100%;
+  height:100%;
+}
+.window {
+  max-width: 780px;
+  z-index: 9999;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  margin :auto;
+  background-color: #ffffff;
+  font-family: 'Segoe UI Light', sans-serif;
+  font-size: 15pt;
+}
+.window img {
+  width:100%;
+  height:auto;
+}
+.inner{display:table-cell;vertical-align:middle;}
+#popupfoot {
+  font-size: 16pt;
+}
+.showImage {
+  margin:0 0 3em;
+  display:table;
+  text-align:center
+}
+.showImage img {
+  display:block
+}
+  </style>
+  
+</head>
+<body>
+<div class="container-fluid">
+	<nav class="navbar navbar-inverse" style="background-color: #d9d3cc;padding: -3px;">
+      <div class="navbar-header">
+      <button type="button" class="navbar-toggle btn btn-default btn-lg" data-toggle="collapse" data-target="#myNavbar">
+        
+          <span class="glyphicon glyphicon-th-list"></span> 
+                             
+      </button>
+      
+      <div class="collapse navbar-collapse" id="myNavbar">
+      <ul  class="nav navbar-nav" style="background-color: #d9d3cc;margin: -8px;">
+    <li><a href="#" style="color: #886500;">EDUNEXT ACADEMY UP</a></li>
+    <li><a href="#" style="color: #886500;">EDA SAKET</a></li>
+    <li><a href="#" style="color: #886500;">EDUNEXT NOIDA</a></li>
+    <li><a href="#" style="color: #886500;">EDA RAJOURI GARDEN</a></li>
+    <li><a href="#" style="color: #886500;">EDUNEXT PREET VIHAR</a></li>
+    <li><a href="#" style="color: #886500;">EDUNEXT ANAND VIHAR</a></li>
+    <li><a href="#" style="color: #886500;">EDUNEXT NEW DELHI</a></li>
+    <li><a href="#" style="color: #886500;">CONTACT US</a></li>
+</ul>
+</div>
+</nav>
+
+<div class="row">
+<div class="container-fluid">
+
+<div class="col-lg-5" style="padding: 20px 5px;">
+    <a href="" style="text-decoration: none;text-transform: none;text-shadow: none;text-decoration-style: none;transition-property: none;text-anchor: none;">
+    <img src="images/header.jpg" style="width: 320px; height: 135px;"></a>
+</div>
+
+<div class="col-lg-7 col1" style="padding: 23px 13px;margin-left: -20px;margin-right: 20px;letter-spacing:1.5px;">
+  <div class="menu">
+  <nav>
+  <div class="navbar-header">
+  <button type="button" class="navbar-toggle btn btn-default btn-lg" data-toggle="collapse" data-target="#myNavbar1" style="text-decoration-color: blue;">
+       <span class="glyphicon glyphicon-th-list"></span> 
+  </button>
+  <div class="collapse navbar-collapse" id="myNavbar1">
+  <ul class="nav navbar-nav">
+    <li><a href="home.html">HOME</a></li>
+     <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">ABOUT US<span class="caret"></span></a>   
+     <ul class="dropdown-menu">
+       <li><a href="internal.html">ABOUT SCHOOL</a></li>
+       <li><a href="#">CHAIRMAN'S MESSAGE</a></li>
+       <li><a href="#">PRINCIPAL'S MESSAGE</a></li>
+       <li><a href="#">CBSE INFO</a></li>
+     </ul>
+
+     </li>
+     <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">ACADEMICS<span class="caret"></span></a>
+      <ul class="dropdown-menu">
+     <li><a href="#">OUR CURRICULUM</a></li>
+       <li><a href="#">SYLLABUS</a></li>
+       <li><a href="#">RESULTS</a></li>
+     </ul>
+      </li>
+    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">ADMISSIONS<span class="caret"></span></a><ul class="dropdown-menu">
+      <li><a href="#">ADMISSION PROCEDURE</a></li>
+       <li><a href="#">ADMISSION ENQUIRY</a></li>
+     </ul></li>
+    <li class="dropdown" ><a href="#" class="dropdown-toggle" data-toggle="dropdown">GALLERY<span class="caret"></span></a><ul class="dropdown-menu">
+      <li><a href="gallery.html">IMAGE GALLERY</a></li>
+       <li><a href="#">VIDEO GALLERY</a></li>
+       <li><a href="#">IN MEDIA</a></li>
+     </ul></li>
+     <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">CONTACT US<span class="caret"></span></a><ul class="dropdown-menu">
+      <li><a href="#">REACH US</a></li>
+       <li><a href="#">FEEDBACK</a></li>
+     </ul></li>
+     <li><button type="button" class="btn btn-default btn-sm" style="margin-bottom: -25px;padding:3px 5px;font-size: 14px;line-height: 1.5;border-radius: 3px;margin-right: -29px;margin-left: 18px;">
+          <span class="glyphicon glyphicon-search"></span>
+        </button></li>
+  </ul>
+  </div>
+  </nav>
+  </div>
+  </div>
+
+</div>
+</div>
+<div class="row">
+	<div class="col-lg-8">
+  <p style="color:#997511;font-size: 25px;font-family: adobe Garamond;">EVENT 1</p>
+		<hr class="a1">
+		
+		<div class="row">
+    <br>
+			<div class="col-lg-3">
+			  <a href="" data-toggle="modal" data-target=".pop-up-1">  
+				<img class="img-responsive" src="images/i1.jpg" style="width:194.83px;height:130.33px;"></a>
+        <div class="modal fade pop-up-1" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          <div id="myLargeModalLabel-1"></div>
+        </div>
+        <div class="modal-body">
+        <img src="images/i1.jpg" class="img-responsive img-rounded center-block" alt="" style="width: 100%;">
+        </div>
+      </div>
+    </div>
+  </div>
+            	<br>
+           <a href="" data-toggle="modal" data-target=".pop-up-2">  	
+				<img class="img-responsive" src="images/i2.jpg" style="width:194.83px;height:130.33px;" /></a>
+        <div class="modal fade pop-up-2" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel-2" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          <div id="myLargeModalLabel-2"></div>
+        </div>
+        <div class="modal-body">
+        <img src="images/i2.jpg" class="img-responsive img-rounded center-block" alt="" style="width: 100%;">
+        </div>
+      </div>
+    </div>
+  </div>
+				<br>
+				<a href="" data-toggle="modal" data-target=".pop-up-3">  
+				<img class="img-responsive" src="images/i3.jpg" style="width:194.83px;height:130.33px;"/></a>
+        <div class="modal fade pop-up-3" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel-3" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          <div id="myLargeModalLabel-3"></div>
+        </div>
+        <div class="modal-body">
+        <img src="images/i3.jpg" class="img-responsive img-rounded center-block" alt="" style="width: 100%;">
+        </div>
+      </div>
+    </div>
+  </div>
+				<br>
+				  <a href="" data-toggle="modal" data-target=".pop-up-4"> 
+				<img class="img-responsive" src="images/i4.jpg" style="width:194.83px;height:130.33px;"/></a>
+        <div class="modal fade pop-up-4" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel-4" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          <div id="myLargeModalLabel-4"></div>
+        </div>
+        <div class="modal-body">
+        <img src="images/i4.jpg" class="img-responsive img-rounded center-block" alt="" style="width: 100%;">
+        </div>
+      </div>
+    </div>
+  </div>
+				<br>
+				<a href="" data-toggle="modal" data-target=".pop-up-5"> 
+				<img class="img-responsive" src="images/i5.jpg" style="width:194.83px;height:130.33px;margin-bottom: 18px;"/></a>
+        <div class="modal fade pop-up-5" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel-5" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          <div id="myLargeModalLabel-5"></div>
+        </div>
+        <div class="modal-body">
+        <img src="images/i5.jpg" class="img-responsive img-rounded center-block" alt="" style="width: 100%;">
+        </div>
+      </div>
+    </div>
+  </div>
+			</div>
+			<div class="col-lg-3">
+			 <a href="" data-toggle="modal" data-target=".pop-up-6"> 
+				<img class="img-responsive" src="images/i6.jpg" style="width:194.83px;height:130.33px;"/></a>
+        <div class="modal fade pop-up-6" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel-6" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          <div id="myLargeModalLabel-6"></div>
+        </div>
+        <div class="modal-body">
+        <img src="images/i6.jpg" class="img-responsive img-rounded center-block" alt="" style="width: 100%;">
+        </div>
+      </div>
+    </div>
+  </div>
+            	<br>
+        <a href="" data-toggle="modal" data-target=".pop-up-7">     	
+				<img class="img-responsive" src="images/i7.jpg" style="width:194.83px;height:130.33px;"/></a>
+        <div class="modal fade pop-up-7" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel-7" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          <div id="myLargeModalLabel-7"></div>
+        </div>
+        <div class="modal-body">
+        <img src="images/i7.jpg" class="img-responsive img-rounded center-block" alt="" style="width: 100%;">
+        </div>
+      </div>
+    </div>
+  </div>
+				<br>
+				<a href="" data-toggle="modal" data-target=".pop-up-8"> 
+				<img class="img-responsive" src="images/i8.jpg" style="width:194.83px;height:130.33px;"/></a>
+        <div class="modal fade pop-up-8" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel-8" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          <div id="myLargeModalLabel-8"></div>
+        </div>
+        <div class="modal-body">
+        <img src="images/i8.jpg" class="img-responsive img-rounded center-block" alt="" style="width: 100%;">
+        </div>
+      </div>
+    </div>
+  </div>
+				<br>
+				<a href="" data-toggle="modal" data-target=".pop-up-9"> 
+				<img class="img-responsive" src="images/i9.jpg" style="width:194.83px;height:130.33px;"/></a>
+        <div class="modal fade pop-up-9" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel-9" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          <div id="myLargeModalLabel-9"></div>
+        </div>
+        <div class="modal-body">
+        <img src="images/i9.jpg" class="img-responsive img-rounded center-block" alt="" style="width: 100%;">
+        </div>
+      </div>
+    </div>
+  </div>
+				<br>
+				<a href="" data-toggle="modal" data-target=".pop-up-10"> 
+				<img class="img-responsive" src="images/i10.jpg" style="width:194.83px;height:130.33px;margin-bottom: 18px;"/></a>
+        <div class="modal fade pop-up-10" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel-10" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          <div id="myLargeModalLabel-10"></div>
+        </div>
+        <div class="modal-body">
+        <img src="images/i10.jpg" class="img-responsive img-rounded center-block" alt="" style="width: 100%;">
+        </div>
+      </div>
+    </div>
+  </div>
+			</div>
+            <div class="col-lg-3">
+            <a href="" data-toggle="modal" data-target=".pop-up-11"> 
+            	<img class="img-responsive" src="images/i11.jpg" style="width:194.83px;height:130.33px;"/></a>
+              <div class="modal fade pop-up-11" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel-11" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          <div id="myLargeModalLabel-11"></div>
+        </div>
+        <div class="modal-body">
+        <img src="images/i11.jpg" class="img-responsive img-rounded center-block" alt="" style="width: 100%;">
+        </div>
+      </div>
+    </div>
+  </div>
+            	<br>
+         <a href="" data-toggle="modal" data-target=".pop-up-12">    	
+				<img class="img-responsive" src="images/i12.jpg" style="width:194.83px;height:130.33px;"/></a>
+        <div class="modal fade pop-up-12" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel-12" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          <div id="myLargeModalLabel-12"></div>
+        </div>
+        <div class="modal-body">
+        <img src="images/i12.jpg" class="img-responsive img-rounded center-block" alt="" style="width: 100%;">
+        </div>
+      </div>
+    </div>
+  </div>
+				<br>
+				<a href="" data-toggle="modal" data-target=".pop-up-13"> 
+				<img class="img-responsive" src="images/i13.jpg" style="width:194.83px;height:130.33px;"/></a>
+        <div class="modal fade pop-up-13" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel-13" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          <div id="myLargeModalLabel-13"></div>
+        </div>
+        <div class="modal-body">
+        <img src="images/i13.jpg" class="img-responsive img-rounded center-block" alt="" style="width: 100%;">
+        </div>
+      </div>
+    </div>
+  </div>
+				<br>
+				<a href="" data-toggle="modal" data-target=".pop-up-14"> 
+				<img class="img-responsive" src="images/i14.jpg" style="width:194.83px;height:130.33px;"/></a>
+        <div class="modal fade pop-up-14" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel-14" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          <div id="myLargeModalLabel-14"></div>
+        </div>
+        <div class="modal-body">
+        <img src="images/i14.jpg" class="img-responsive img-rounded center-block" alt="" style="width: 100%;">
+        </div>
+      </div>
+    </div>
+  </div>
+				<br>
+				<a href="" data-toggle="modal" data-target=".pop-up-15"> 
+				<img class="img-responsive" src="images/i15.jpg" style="width:194.83px;height:130.33px;margin-bottom: 18px;" /></a>
+        <div class="modal fade pop-up-15" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel-15" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          <div id="myLargeModalLabel-15"></div>
+        </div>
+        <div class="modal-body">
+        <img src="images/i15.jpg" class="img-responsive img-rounded center-block" alt="" style="width: 100%;">
+        </div>
+      </div>
+    </div>
+  </div>
+            </div>
+            <div class="col-lg-3">
+
+           <a href="" data-toggle="modal" data-target=".pop-up-16"> 
+            	<img class="img-responsive" src="images/i16.jpg" style="width:194.83px;height:130.33px;"/></a>
+              <div class="modal fade pop-up-16" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel-16" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          <div id="myLargeModalLabel-16"></div>
+        </div>
+        <div class="modal-body">
+        <img src="images/i16.jpg" class="img-responsive img-rounded center-block" alt="" style="width: 100%;">
+        </div>
+      </div>
+    </div>
+  </div>
+            	<br>
+         <a href="" data-toggle="modal" data-target=".pop-up-17">    	
+				<img class="img-responsive" src="images/i17.jpg" style="width:194.83px;height:130.33px;"/></a>
+        <div class="modal fade pop-up-17" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel-17" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          <div id="myLargeModalLabel-17"></div>
+        </div>
+        <div class="modal-body">
+        <img src="images/i17.jpg" class="img-responsive img-rounded center-block" alt="" style="width: 100%;">
+        </div>
+      </div>
+    </div>
+  </div>
+				<br>
+				<a href="" data-toggle="modal" data-target=".pop-up-18"> 
+				<img class="img-responsive" src="images/i18.jpg" style="width:194.83px;height:130.33px;"/></a>
+        <div class="modal fade pop-up-18" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel-18" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          <div id="myLargeModalLabel-18"></div>
+        </div>
+        <div class="modal-body">
+        <img src="images/i18.jpg" class="img-responsive img-rounded center-block" alt="" style="width: 100%;">
+        </div>
+      </div>
+    </div>
+  </div>
+				<br>
+				<a href="" data-toggle="modal" data-target=".pop-up-19"> 
+				<img class="img-responsive" src="images/i19.jpg" style="width:194.83px;height:130.33px;"/></a>
+        <div class="modal fade pop-up-19" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel-19" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          <div id="myLargeModalLabel-19"></div>
+        </div>
+        <div class="modal-body">
+        <img src="images/i19.jpg" class="img-responsive img-rounded center-block" alt="" style="width: 100%;">
+        </div>
+      </div>
+    </div>
+  </div>
+				<br>
+				<a href="" data-toggle="modal" data-target=".pop-up-20"> 
+				<img class="img-responsive" src="images/i20.jpg" style="width:194.83px;height:130.33px;"/></a>
+        <div class="modal fade pop-up-20" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel-20" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          <div id="myLargeModalLabel-20"></div>
+        </div>
+        <div class="modal-body">
+        <img src="images/i20.jpg" class="img-responsive img-rounded center-block" alt="" style="width: 100%;">
+        </div>
+      </div>
+    </div>
+  </div>
+            </div>
+		</div>
+	</div>
+	<div class="col-lg-4">
+<div class="imageAndText" style="
+height:143px; 
+background-size:cover; 
+background: url(images/img1.png);
+margin-bottom:-10px;
+">
+    <a href="#" onfocus="" ="color:black;">
+            <h3 style="text-align: center;
+                       padding-top:52px;
+                       padding-bottom: 49px;
+                       color:white;
+                       font-family:Adobe Garamond;
+                       ">WORK WITH<p style="font-family:Adobe Garamond ">US</p></h3></a>
+        </div>
+        <div class="imageAndText" style=" 
+background-size:cover; 
+background: url(images/fig1.jpg);
+height:143px;
+margin-bottom:-10px;">
+    <a href="#">
+            <h3 style="text-align: center;
+                       padding-top:52px;
+                       padding-bottom: 49px;
+                       color:white;
+                       font-family: Adobe Garamond;
+
+                    ">OUR <p style="font-family:Adobe Garamond;">SCHOOLS</p></h3></a>
+        </div>
+        <div class="imageAndText" style="
+background-size:cover; 
+background: url(images/img5.jpg);
+height: 143px;margin-bottom:-10px;">
+    <a href="#">
+            <h3 style="text-align: center;
+                       padding-top:52px;
+                       padding-bottom: 49px;
+                       color:white;
+                       font-family:Adobe Garamond;
+                    ">CAREERS</h3></a>
+        </div>
+        <div class="imageAndText" style="
+height=150px; 
+background:no-repeat;
+background-size:cover; 
+background: url(images/img6.jpg);
+height: 143px;margin-bottom:-10px;">
+    <a href="#">
+            <h3 style="text-align: center;
+                       padding-top:75px;
+                       padding-bottom: 49px;
+                       color:white;
+                       font-family:Adobe Garamond;
+              ">CONTACT US</h3></a>
+        </div>
+	</div>
+</div>
+<br>
+<div class="container-fluid">
+  <div class="row z1"  style="border-radius: 0px;padding: 25px 0px;background-image: url(images/footer-logo.png) ;background-repeat: no-repeat;background-size: contain;background: cover;background-size: 260px;background-position: 772px 2px;line-height: 1.8em;">
+ <div class="col-lg-2">
+    <div class="logo">
+      <img src="images/CAPTURE.PNG" class="img-responsive">
+    </div>
+  </div>
+<div class="col-lg-3">
+<h4 style="color: white;">USEFUL LINKS</h4>
+<hr width="60%" style="margin-left: 0px;">
+  <ul  type="square" style="color: gold; margin-left: -25px;">
+    <li><a href="#" style="color:white;font-size: 13px;">Edunext Academy UP</a></li>
+    <li><a href="#" style="color:white;font-size: 13px;">Edunext Saket</a></li>
+    <li><a href="#" style="color:white;font-size: 13px;">Edunext Noida</a></li>
+    <li><a href="#" style="color:white;font-size: 13px;">Edunext Rajouri Garden</a></li>
+    <li><a href="#" style="color:white;font-size: 13px;">Edunext Preet Vihar</a></li>
+    <li><a href="#" style="color:white;font-size: 13px;">Edunext Anand Vihar</a></li>
+    <li><a href="#" style="color:white;font-size: 13px;">Edunext New Delhi</a></li>
+  </ul>
+</div>
+<div class="col-lg-3">
+<h4 style="color: white;">ACCESSIBILITY</h4>
+<hr width="60%" style="margin-left: 0px;">
+<ul type="square" style="color:gold;margin-left: -25px">
+<li><a href="#" style="color:white">View in High visibility Mode</a></li>
+<li><a href="#" style="color:white">View in Printer Friendly</a></li>
+<li><a href="#" style="color:white">Website Sitemap</a></li>
+</ul>
+</div>
+<div class="col-lg-3">
+  <h4 style="color: white; font-family: Adobe Garamond;">CONTACT</h4>
+  <hr width="60%" style="margin-left: 0px;">
+  <p style="margin-bottom: 13px;
+    font-size: 13px;
+    font-weight: 200;
+    color:white;">Edunext Academy Pvt  Ltd.</p>
+  <p style="margin-bottom: 13px;
+    font-size: 13px;
+    font-weight: 200;color:white;">Ramprastha Colony,</p>
+    <p style="margin-bottom: 13px;
+    font-size: 13px;
+    font-weight: 200;color:white;">Ghaziabad, Uttar Pradesh</p>
+  <p style="margin-bottom: 13px;
+    font-size: 13px;
+    font-weight: 200;color:white;">+44(0)1273 704 359</p>
+</div>
+<DIV class="col-lg-1"></DIV>
+
+ </div>
+</div>
+<footer class="r1" style="border-radius: 1px;">
+ <p  style="margin-bottom:0px;">© 2017 Edunext Academy Pvt Ltd</p>
+</footer>
+</div>
+</body>
+</html>
